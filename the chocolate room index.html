@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Chocolate Room — Anjar</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#fff8ef;color:#28150d}a{text-decoration:none;color:inherit}.nav{position:sticky;top:0;z-index:5;background:#28150df5;color:#fff;padding:16px 5%;display:flex;justify-content:space-between;align-items:center}.brand{font:bold 20px Georgia}.links{display:flex;gap:20px;font-size:13px}.btn{border:0;border-radius:30px;padding:11px 17px;font-weight:bold;cursor:pointer}.gold{background:#d9a24a;color:#28150d}.hero{min-height:620px;padding:100px 7%;color:white;background:linear-gradient(90deg,#180b07ee,#180b0755),url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1800&q=85') center/cover}.hero h1{font:700 clamp(50px,8vw,88px)/.95 Georgia;max-width:700px}.hero p{max-width:600px;font-size:18px;line-height:1.7}.actions{display:flex;gap:10px;flex-wrap:wrap}.section{padding:70px 5%}.head{text-align:center;max-width:700px;margin:0 auto 35px}.head h2{font:700 52px Georgia;margin:10px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1100px;margin:auto}.card{background:white;border:1px solid #ead8c5;border-radius:18px;padding:24px}.card h3{font:700 27px Georgia;margin-top:0}.card p,.card li{color:#70594c;line-height:1.7}.gallery img{width:100%;height:230px;object-fit:cover;border-radius:16px}.dark{background:#28150d;color:white}.dark .card{background:#392015;color:white;border-color:#60402f}.admin{display:none;position:fixed;inset:0;z-index:20;background:#160904ee;padding:20px;overflow:auto}.adminbox{max-width:750px;margin:30px auto;background:white;border-radius:20px;padding:25px}.admin.open{display:block}.field{margin:12px 0}.field label{display:block;font-weight:bold;margin-bottom:6px}.field input,.field textarea{width:100%;padding:11px;border:1px solid #dcc8b4;border-radius:9px}.field textarea{min-height:100px}.preview{max-width:180px;max-height:120px;margin-top:10px;display:none;border-radius:10px}@media(max-width:750px){.links{display:none}.grid{grid-template-columns:1fr}.hero{padding:80px 6%}}
+</style></head><body>
+<nav class="nav"><div class="brand">THE CHOCOLATE ROOM<br><small>CAFÉ & DESSERTS</small></div>
+<div class="links"><a href="#menu">MENU</a><a href="#gallery">GALLERY</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a></div>
+<div><button class="btn" onclick="openAdmin()">⚙ ADMIN</button> <a class="btn gold" href="tel:+918799618360">CALL</a></div></nav>
+
+<header class="hero" id="home"><div><div>CHOCOLATE • COFFEE • DESSERTS</div><h1 id="title">Chocolate moments made memorable.</h1><p id="desc">A cozy café experience in Anjar with desserts, waffles, fondue, shakes, coffee and quick bites.</p>
+<div class="actions"><a class="btn gold" href="#menu">EXPLORE MENU</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=The+Chocolate+Room+Nirvana+Heights+Anjar+Gujarat" target="_blank">GET DIRECTIONS</a></div></div></header>
+
+<section class="section"><div class="head"><h2>Something for every craving.</h2><p>Chocolate treats, waffles, sundaes, shakes, coffee and savoury café favourites.</p></div>
+<div class="grid"><div class="card"><h3>🍫 Chocolate</h3><p>Hot chocolate, brownies, mousse, pudding and fondue.</p></div><div class="card"><h3>🧇 Waffles</h3><p>Nutella, Oreo and other dessert waffle favourites.</p></div><div class="card"><h3>🥤 Shakes</h3><p>Classic and indulgent shakes, frappes and mocktails.</p></div></div></section>
+
+<section class="section" id="about"><div class="grid"><div class="card"><h3>About</h3><p>The Chocolate Room — Anjar is presented here as a café and dessert website demo for Nirvana Heights, Anjar.</p></div><div class="card"><h3>Visit</h3><ul><li>Nirvana Heights, Vaishali Enclave, Anjar</li><li>12:00 PM – 12:30 AM</li><li>Phone: +91 87996 18360</li><li>Dine-in / takeaway / delivery listing</li></ul></div><div class="card"><h3>Admin</h3><p>Edit the headline and description, and upload a hero photo directly from your device using the ⚙ ADMIN button.</p></div></div></section>
+
+<section class="section" id="menu"><div class="head"><h2>Menu Highlights</h2></div><div class="grid">
+<div class="card"><h3>Soups & Fries</h3><ul><li>Manchow Soup</li><li>Peri Peri Fries</li><li>Cheesy French Fries</li></ul></div>
+<div class="card"><h3>Pizza & Pasta</h3><ul><li>Margherita Pizza</li><li>Veg Supreme Pizza</li><li>Spaghetti Alfredo</li></ul></div>
+<div class="card"><h3>Waffles & Desserts</h3><ul><li>Nutella Waffle</li><li>Oreo Waffle</li><li>Chocolate Brownie</li></ul></div>
+<div class="card"><h3>Shakes</h3><ul><li>Brownie Shake</li><li>Oreo Cookie Shake</li><li>Nutella Frappe</li></ul></div>
+<div class="card"><h3>Fondue</h3><ul><li>Chocolate Fondue</li><li>Nutella Fondue</li><li>Caramel Fondue</li></ul></div>
+<div class="card"><h3>Mocktails</h3><ul><li>Blue Slush</li><li>Green Apple Granita</li><li>Mint Mojito</li></ul></div>
+</div></section>
+
+<section class="section" id="gallery"><div class="head"><h2>Gallery</h2><p>Demo photos — replace the hero image from Admin.</p></div><div class="grid gallery">
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80">
+<img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=80">
+<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80">
+</div></section>
+
+<section class="section dark" id="contact"><div class="grid"><div class="card"><h3>Find Us</h3><p>Plot 3–6, 13–18, 1st Floor, Nirvana Heights, Vaishali Enclave, Champak Nagar Road, Anjar, Gujarat 370110</p><a class="btn gold" target="_blank" href="https://www.google.com/maps/search/?api=1&query=The+Chocolate+Room+Nirvana+Heights+Anjar+Gujarat">OPEN MAP</a></div><div class="card"><h3>Contact</h3><p>+91 87996 18360</p><p>12:00 PM – 12:30 AM</p><a class="btn gold" href="tel:+918799618360">CALL NOW</a></div></div></section>
+
+<footer style="padding:35px 5%;background:#130805;color:#d7c3b6">THE CHOCOLATE ROOM • ANJAR • © 2026</footer>
+
+<div class="admin" id="admin"><div class="adminbox"><button style="float:right" onclick="closeAdmin()">✕</button><h2>Admin Panel</h2><p>Demo CMS: changes are saved in this browser.</p>
+<div class="field"><label>Headline</label><input id="aTitle"></div><div class="field"><label>Description</label><textarea id="aDesc"></textarea></div>
+<div class="field"><label>Upload hero photo from device/gallery</label><input type="file" accept="image/*" onchange="pick(event)"><img id="preview" class="preview"></div>
+<button class="btn gold" onclick="save()">SAVE CHANGES</button> <button class="btn" onclick="resetSite()">RESET</button></div></div>
+
+<script>
+const D={title:'Chocolate moments made memorable.',desc:'A cozy café experience in Anjar with desserts, waffles, fondue, shakes, coffee and quick bites.'};
+function openAdmin(){let d=JSON.parse(localStorage.tcr||'null')||D;aTitle.value=d.title;aDesc.value=d.desc;let im=localStorage.tcrImg;if(im){preview.src=im;preview.style.display='block'}admin.classList.add('open')}
+function closeAdmin(){admin.classList.remove('open')}
+function pick(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{localStorage.tcrTemp=r.result;preview.src=r.result;preview.style.display='block'};r.readAsDataURL(f)}
+function save(){localStorage.tcr=JSON.stringify({title:aTitle.value||D.title,desc:aDesc.value||D.desc});if(localStorage.tcrTemp){localStorage.tcrImg=localStorage.tcrTemp;delete localStorage.tcrTemp}apply();closeAdmin();alert('Saved on this device.')}
+function apply(){let d=JSON.parse(localStorage.tcr||'null')||D;title.textContent=d.title;desc.textContent=d.desc;if(localStorage.tcrImg)home.style.backgroundImage='linear-gradient(90deg,#180b07ee,#180b0755),url("'+localStorage.tcrImg+'")'}
+function resetSite(){localStorage.removeItem('tcr');localStorage.removeItem('tcrImg');location.reload()}apply();
+</script></body></html>
