@@ -1,14 +1,13 @@
-This is the original-style Fitness Foods website with the existing restaurant sections, menu, gallery, reviews, contact and order CTA, plus the admin CMS.
+PIZZA ZONE GANDHIDHAM DEMO
 
-Admin:
-admin@fitnessfoods.local
-admin123
+Open index.html in a browser.
 
-Only the image-input behavior was changed/added:
-- Menu photo: choose directly from device
-- Gallery photo: choose directly from device
-- Homepage hero: choose directly from device
-- Preview before saving
-- Existing text/menu/admin features remain available
+Verified public listing details used in this demo:
+- Address: 5/B, Plot No.533, Ward, Service road, near Rotary Circle, Gandhidham, Gujarat 370205
+- Phone: +91 63575 77757
+- Categories: Pizza restaurant, Italian restaurant, Pizza takeaway, Salad shop
+- Listed hours: 11:00 AM–11:00 PM daily
+- Public listing rating: 4.7
+- Public menu sources list Margherita Pizza, Party Lover Pizza, Seven Cheese Pizza, Golden Feast Pizza, breads, starters, salads and desserts.
 
-This demo stores uploaded images in browser localStorage. A production deployment should use server/cloud image storage and a secure database/authentication.
+Note: Food photos in this demo are generic visual placeholders, not claimed to be Pizza Zone's own photos. Menu names are based on public listings where noted.

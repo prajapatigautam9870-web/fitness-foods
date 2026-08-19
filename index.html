@@ -1,121 +1,107 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fitness Foods — Restaurant & Admin</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pizza Zone | Gandhidham</title>
 <style>
-:root{--bg:#20140e;--bg2:#2c1b12;--cream:#f7efe2;--muted:#b9a897;--green:#71845d;--gold:#c8a66d;--line:#ffffff18}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--cream);font:15px/1.5 Inter,system-ui,sans-serif}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}button{cursor:pointer}
-.container{width:min(1180px,90%);margin:auto}.btn{border:1px solid var(--line);border-radius:999px;padding:11px 17px;background:#ffffff09;color:var(--cream);font-weight:700}.btn.primary{background:var(--cream);color:var(--bg)}.btn.green{background:var(--green);border-color:var(--green)}.btn.danger{background:#7f352e;border-color:#7f352e}.nav{position:sticky;top:0;z-index:30;background:#20140ee8;backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:15px 5%;display:flex;justify-content:space-between;align-items:center}.logo{font:700 20px Georgia;letter-spacing:.08em}.navlinks{display:flex;gap:20px;font-size:13px}.hero{min-height:76vh;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.hero h1{font:700 clamp(55px,7vw,95px)/.9 Georgia;margin:15px 0}.eyebrow,.kicker{font-size:11px;font-weight:800;letter-spacing:.18em;color:var(--gold)}.hero p{color:var(--muted);font-size:18px}.heroimg{height:560px;border-radius:28px;background:linear-gradient(#0000,#0008),url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=85") center/cover}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.section{padding:85px 0}.section h2{font:700 clamp(38px,5vw,65px)/1 Georgia;margin:8px 0 30px}.bar{background:var(--cream);color:#20140e}.barin{display:grid;grid-template-columns:repeat(4,1fr);padding:25px 0;gap:20px}.stat b{font-size:20px;display:block}.stat span{font-size:11px;color:#786b5d}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--bg2);border:1px solid var(--line);border-radius:18px;overflow:hidden}.pic{height:220px;background:center/cover}.body{padding:18px}.body h3{font:700 23px Georgia;margin:4px 0}.muted{color:var(--muted)}.tag{display:inline-block;background:#71845d33;color:#d3dfc8;border-radius:999px;padding:4px 8px;font-size:10px}.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}.filter{border:1px solid var(--line);background:#ffffff07;color:var(--cream);border-radius:999px;padding:8px 13px}.filter.active{background:var(--cream);color:var(--bg)}.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.gallery div{height:250px;border-radius:16px;background:center/cover}.cta{padding:70px;border-radius:25px;background:linear-gradient(90deg,#3c2619d9,#20140e99),url("https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1600&q=85") center/cover}.cta h2{margin:0}.footer{border-top:1px solid var(--line);padding:40px 0;color:var(--muted);display:flex;justify-content:space-between;gap:20px}
-.modal{position:fixed;inset:0;background:#000b;display:none;place-items:center;z-index:100;padding:20px}.modal.show{display:grid}.modalbox{width:min(900px,100%);max-height:92vh;overflow:auto;background:#24170f;border:1px solid var(--line);border-radius:20px;padding:25px}.modalhead{display:flex;justify-content:space-between;align-items:center}.x{font-size:28px;background:none;border:0;color:var(--cream)}
-.admin{background:#120b07;min-height:100vh;display:none}.admin.show{display:block}.adminnav{display:flex;justify-content:space-between;align-items:center;padding:18px 5%;border-bottom:1px solid var(--line);position:sticky;top:0;background:#120b07f2;backdrop-filter:blur(10px);z-index:20}.adminmain{width:min(1200px,92%);margin:30px auto}.dash{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.panel{background:#1d120c;border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:18px}.num{font:700 32px Georgia}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.tab{padding:10px 15px;border-radius:9px;border:1px solid var(--line);background:#ffffff06;color:var(--cream)}.tab.active{background:var(--cream);color:#20140e}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field input,.field textarea,.field select{background:#130c08;border:1px solid var(--line);color:var(--cream);border-radius:10px;padding:11px}.field textarea{min-height:100px}.tablewrap{overflow:auto}.table{width:100%;border-collapse:collapse}.table th,.table td{padding:12px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
-.upload{border:1px dashed #ffffff3b;border-radius:13px;padding:14px;background:#ffffff05}.upload input[type=file]{width:100%;padding:10px;background:#130c08;border:1px solid var(--line);color:var(--cream);border-radius:9px}.uploadhint{font-size:12px;color:var(--muted);margin-top:7px}.preview{display:flex;align-items:center;gap:12px;margin-top:10px}.preview img{width:130px;height:90px;object-fit:cover;border-radius:9px;border:1px solid var(--line);display:none}.small{font-size:12px}.hidden{display:none!important}
-.login{width:min(430px,100%)}@media(max-width:800px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding:55px 0}.heroimg{height:380px;order:-1}.barin,.cards,.dash{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.footer{flex-direction:column}}@media(max-width:500px){.barin,.cards,.dash,.gallery{grid-template-columns:1fr}.hero h1{font-size:58px}.section{padding:60px 0}.cta{padding:40px 25px}}
+:root{--red:#d92820;--dark:#100b09;--cream:#fff7e9;--muted:#b9aa9a;--gold:#f2b84b;--card:#1d1410}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--dark);color:var(--cream);font-family:Arial,Helvetica,sans-serif}
+a{text-decoration:none;color:inherit}.wrap{width:min(1180px,90%);margin:auto}
+nav{position:sticky;top:0;z-index:50;padding:16px 5%;background:#100b09ed;backdrop-filter:blur(12px);border-bottom:1px solid #ffffff18;display:flex;justify-content:space-between;align-items:center}
+.logo{font:800 24px Georgia}.logo span{color:var(--red)}.links{display:flex;gap:25px;font-size:13px;font-weight:700}.btn{display:inline-block;border:1px solid #ffffff24;border-radius:999px;padding:12px 18px;font-weight:800}.primary{background:var(--red);border-color:var(--red)}.gold{background:var(--gold);color:#211308;border-color:var(--gold)}
+.hero{min-height:82vh;display:grid;grid-template-columns:1.05fr .95fr;gap:45px;align-items:center}.eyebrow{font-size:12px;letter-spacing:.2em;color:var(--gold);font-weight:800}.hero h1{font:800 clamp(55px,8vw,100px)/.88 Georgia;margin:20px 0}.hero h1 span{color:var(--red)}.hero p{font-size:18px;line-height:1.7;color:var(--muted);max-width:650px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin:28px 0}.hero-photo{height:590px;border-radius:30px;background:linear-gradient(180deg,#0000,#0009),url('https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1200&q=85') center/cover;box-shadow:0 30px 80px #0008}
+.strip{background:var(--cream);color:#1a100a}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:25px 0}.stats b{display:block;font-size:20px}.stats small{color:#78695a}
+.section{padding:85px 0}.kicker{font-size:11px;letter-spacing:.2em;color:var(--gold);font-weight:800}.section h2{font:800 clamp(38px,5vw,65px) Georgia;margin:10px 0 35px}.muted{color:var(--muted)}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.cat{background:var(--card);border:1px solid #ffffff14;border-radius:18px;overflow:hidden}.catimg{height:210px;background:center/cover}.cat b{display:block;padding:16px;font-size:18px}
+.menu-tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:25px}.filter{border:1px solid #ffffff1c;background:#ffffff08;color:var(--cream);border-radius:999px;padding:9px 14px;cursor:pointer}.filter.active{background:var(--cream);color:#170e09}
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.item{background:var(--card);border:1px solid #ffffff14;border-radius:18px;overflow:hidden}.itemimg{height:220px;background:center/cover}.itembody{padding:18px}.itembody h3{font:700 23px Georgia;margin:7px 0}.price{color:var(--gold);font-weight:800}
+.reviewbox{background:linear-gradient(120deg,#2c1710,#17100d);border:1px solid #ffffff18;border-radius:24px;padding:35px}.rating{font:800 72px Georgia;color:var(--gold)}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}.contact-card,.map-card{background:var(--card);border:1px solid #ffffff14;border-radius:22px;padding:28px}.map-card{min-height:350px;display:grid;place-items:center;background:linear-gradient(#0008,#0008),url('https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?auto=format&fit=crop&w=1000&q=80') center/cover}
+footer{border-top:1px solid #ffffff18;padding:35px 0;color:var(--muted);display:flex;justify-content:space-between;gap:20px}
+@media(max-width:850px){.links{display:none}.hero,.contact{grid-template-columns:1fr}.hero-photo{height:420px;order:-1}.stats,.categories{grid-template-columns:1fr 1fr}.menu{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.stats,.categories,.menu{grid-template-columns:1fr}.hero h1{font-size:60px}.section{padding:60px 0}footer{flex-direction:column}}
 </style>
 </head>
 <body>
 
-<div id="public">
-<nav class="nav">
-<a class="logo" href="#home">FITNESS FOODS</a>
-<div class="navlinks"><a href="#home">HOME</a><a href="#menu">MENU</a><a href="#about">ABOUT</a><a href="#gallery">GALLERY</a><a href="#reviews">REVIEWS</a><a href="#contact">CONTACT</a></div>
-<div class="actions" style="margin:0"><button class="btn" onclick="openAdmin()">⚙ ADMIN</button><button class="btn primary" onclick="scrollToId('order')">ORDER ONLINE</button></div>
+<nav>
+<a class="logo" href="#home">🍕 PIZZA <span>ZONE</span></a>
+<div class="links"><a href="#menu">MENU</a><a href="#about">ABOUT</a><a href="#reviews">REVIEWS</a><a href="#contact">CONTACT</a></div>
+<a class="btn primary" href="tel:+916357577757">CALL / ORDER</a>
 </nav>
 
-<header class="container hero" id="home">
-<div><div class="eyebrow">HEALTH FOOD • GANDHIDHAM</div><h1 id="heroHeadline">GOOD FOOD.<br>GOOD FEELING.</h1><p id="heroText">Fresh food, refreshing drinks and a warm dining experience in the heart of Gandhidham.</p><div class="actions"><button class="btn primary" onclick="scrollToId('menu')">EXPLORE MENU</button><button class="btn green" onclick="scrollToId('order')">ORDER ONLINE</button><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Fitness+Foods+333-334+Sector+1A+Gandhidham+Gujarat">GET DIRECTIONS →</a></div><div class="muted">★ 4.4 / 5 · 255 Google Reviews · Sector 1A</div></div>
-<div class="heroimg" id="heroImg"></div>
+<header class="wrap hero" id="home">
+<div>
+<div class="eyebrow">PIZZA • ITALIAN • TAKEAWAY • GANDHIDHAM</div>
+<h1>HOT.<br><span>FRESH.</span><br>LOADED.</h1>
+<p>A modern demo website for Pizza Zone, near Rotary Circle in Gandhidham. Browse the menu, find the restaurant, check reviews and order or call in one tap.</p>
+<div class="actions">
+<a class="btn primary" href="#menu">EXPLORE MENU</a>
+<a class="btn gold" href="tel:+916357577757">📞 63575 77757</a>
+<a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Pizza+Zone+5%2FB+Plot+No.533+Gandhidham">📍 GET DIRECTIONS</a>
+</div>
+<div>★ <b>4.7</b> · 4,313 ratings on Justdial</div>
+</div>
+<div class="hero-photo"></div>
 </header>
 
-<div class="bar"><div class="container barin"><div class="stat"><b>₹200–₹400</b><span>PER PERSON</span></div><div class="stat"><b>4.4 ★</b><span>255 REVIEWS</span></div><div class="stat"><b>DINE-IN</b><span>AVAILABLE</span></div><div class="stat"><b>TAKEAWAY + DELIVERY</b><span>AVAILABLE</span></div></div></div>
+<div class="strip"><div class="wrap stats">
+<div><b>₹200–₹400</b><small>PER PERSON</small></div>
+<div><b>4.7 ★</b><small>JUSTDIAL RATING</small></div>
+<div><b>11 AM–11 PM</b><small>LISTED HOURS</small></div>
+<div><b>DELIVERY</b><small>TAKEAWAY + DINE-IN</small></div>
+</div></div>
 
-<section class="section container" id="about"><div class="kicker">THE EXPERIENCE</div><h2>MORE THAN JUST A MEAL</h2><p id="aboutText" class="muted" style="max-width:700px;font-size:18px">Fitness Foods is a place for enjoyable food, refreshing beverages, healthy choices and a comfortable dining atmosphere in Gandhidham.</p></section>
+<section class="section wrap" id="about">
+<div class="kicker">ABOUT PIZZA ZONE</div>
+<h2>YOUR LOCAL PIZZA STOP.</h2>
+<p class="muted" style="max-width:760px;font-size:18px;line-height:1.8">Pizza Zone is listed as a pizza, Italian and pizza-takeaway restaurant in Gandhidham. Public listings also show vegetarian options, delivery, takeaway and dine-in facilities.</p>
+</section>
 
-<section class="section container" id="menu"><div class="kicker">DIGITAL MENU</div><h2>EXPLORE OUR MENU</h2><div class="filters" id="filters"></div><div class="cards" id="menuCards"></div></section>
+<section class="section wrap" id="menu">
+<div class="kicker">FOOD & DRINKS</div><h2>EXPLORE THE MENU</h2>
+<div class="menu-tools" id="filters"></div>
+<div class="menu" id="menuGrid"></div>
+</section>
 
-<section class="section container" id="gallery"><div class="kicker">VISUAL JOURNAL</div><h2>THE GALLERY</h2><div class="gallery" id="galleryGrid"></div></section>
+<section class="section wrap" id="reviews">
+<div class="kicker">CUSTOMER REVIEWS</div><h2>PEOPLE ARE TALKING.</h2>
+<div class="reviewbox"><div class="rating">4.7 ★</div><p class="muted">Justdial currently lists Pizza Zone at 4.7 based on thousands of ratings. Ratings and reviews can change, so the live listing remains the source of truth.</p><div class="actions"><a class="btn primary" target="_blank" href="https://www.justdial.com/Gandhidham/Pizza-Zone-Rambaug-Road/9999P2836-2836-230401023242-W9P2_BZDET/reviews">VIEW JUSTDIAL REVIEWS</a><a class="btn" target="_blank" href="https://www.google.com/search?q=Pizza+Zone+Gandhidham+reviews">SEARCH GOOGLE REVIEWS</a></div></div>
+</section>
 
-<section class="section container" id="reviews"><div class="kicker">GOOGLE</div><h2>WHAT PEOPLE SAY</h2><div class="panel"><div style="font:700 75px Georgia">4.4</div><div>★ ★ ★ ★ ☆</div><p class="muted">255 Google Reviews</p><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Fitness+Foods+333-334+Sector+1A+Gandhidham+Gujarat">VIEW ALL REVIEWS</a></div></section>
-
-<section class="section container" id="contact"><div class="kicker">FIND US</div><h2>COME BY & SAY HELLO.</h2><p class="muted">333–334, Sector 1A, Gandhidham, Gujarat 370201, India</p><p><b>088035 56789</b></p><div class="actions"><a class="btn primary" href="tel:08803556789">CALL FITNESS FOODS</a><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Fitness+Foods+333-334+Sector+1A+Gandhidham+Gujarat">GET DIRECTIONS</a></div></section>
-
-<section class="section container" id="order"><div class="cta"><div class="kicker">ORDER / VISIT</div><h2>COME HUNGRY.<br>LEAVE HAPPY.</h2><p class="muted">Choose the ordering method configured by the restaurant.</p><div class="actions" id="orderButtons"></div></div></section>
-
-<footer class="footer container"><div><b>FITNESS FOODS</b><br>Health Food Restaurant • Gandhidham</div><div>333–334, Sector 1A<br>088035 56789</div><div><button class="btn" onclick="openAdmin()">⚙ ADMIN PANEL</button></div></footer>
+<section class="section wrap" id="contact">
+<div class="kicker">VISIT US</div><h2>FIND PIZZA ZONE.</h2>
+<div class="contact">
+<div class="contact-card">
+<h3>📍 Address</h3>
+<p class="muted">5/B, Plot No.533, Ward, Service Road, near Rotary Circle, Gandhidham, Gujarat 370205</p>
+<h3>📞 Phone</h3><p><a href="tel:+916357577757">+91 63575 77757</a></p>
+<h3>🕐 Hours</h3><p class="muted">11:00 AM – 11:00 PM daily, according to current public listings.</p>
+<div class="actions"><a class="btn primary" href="tel:+916357577757">CALL NOW</a><a class="btn gold" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Pizza+Zone+5%2FB+Plot+No.533+Gandhidham">OPEN MAPS</a></div>
 </div>
+<div class="map-card"><a class="btn primary" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Pizza+Zone+5%2FB+Plot+No.533+Gandhidham">OPEN GOOGLE MAPS →</a></div>
+</div>
+</section>
 
-<div id="admin" class="admin">
-<div class="adminnav"><b>FITNESS FOODS ADMIN</b><div class="actions" style="margin:0"><button class="btn" onclick="showPublic()">VIEW WEBSITE</button><button class="btn danger" onclick="logout()">LOGOUT</button></div></div>
-<main class="adminmain">
-<div class="dash"><div class="panel"><div class="num" id="statItems">0</div><div class="muted">Menu Items</div></div><div class="panel"><div class="num" id="statPhotos">0</div><div class="muted">Gallery Photos</div></div><div class="panel"><div class="num" id="statFeatured">0</div><div class="muted">Featured Items</div></div><div class="panel"><div class="num" id="statCats">0</div><div class="muted">Categories</div></div></div>
-<div class="panel"><div class="kicker">QUICK ACTIONS</div><h2 style="margin:5px 0">EDIT YOUR WEBSITE</h2><div class="actions"><button class="btn green" onclick="editItem()">＋ ADD MENU ITEM</button><button class="btn" onclick="adminTab('menuTab',0)">✎ EDIT MENU</button><button class="btn" onclick="editGallery()">＋ ADD GALLERY PHOTO</button><button class="btn" onclick="adminTab('galleryTab',1)">✎ EDIT GALLERY</button><button class="btn" onclick="adminTab('homeTab',2)">✎ EDIT HOMEPAGE</button><button class="btn" onclick="editOrder()">＋ ADD ORDER METHOD</button></div></div>
-<div class="tabs"><button class="tab active" onclick="adminTab('menuTab',0)">MENU MANAGER</button><button class="tab" onclick="adminTab('galleryTab',1)">GALLERY</button><button class="tab" onclick="adminTab('homeTab',2)">HOMEPAGE</button><button class="tab" onclick="adminTab('orderTab',3)">ORDER LINKS</button></div>
-
-<section id="menuTab" class="adminTab"><div class="panel"><div class="modalhead"><div><div class="kicker">CMS</div><h2>MENU MANAGER</h2></div><button class="btn green" onclick="editItem()">+ ADD MENU ITEM</button></div><div class="tablewrap"><table class="table"><thead><tr><th>Photo</th><th>Item</th><th>Category</th><th>Price</th><th>Available</th><th>Featured</th><th>Actions</th></tr></thead><tbody id="adminMenuRows"></tbody></table></div></div></section>
-<section id="galleryTab" class="adminTab hidden"><div class="panel"><div class="modalhead"><div><div class="kicker">CMS</div><h2>GALLERY MANAGER</h2></div><button class="btn green" onclick="editGallery()">+ ADD PHOTO</button></div><div class="tablewrap"><table class="table"><thead><tr><th>Preview</th><th>Category</th><th>Actions</th></tr></thead><tbody id="adminGalleryRows"></tbody></table></div></div></section>
-<section id="homeTab" class="adminTab hidden"><div class="panel"><div class="kicker">CONTENT</div><h2>HOMEPAGE CONTENT</h2><div class="formgrid"><div class="field full"><label>Hero headline</label><input id="homeHeadline"></div><div class="field full"><label>Hero supporting text</label><textarea id="homeText"></textarea></div><div class="field full"><label>Hero Image — upload directly from device</label><div class="upload"><input id="homeFile" type="file" accept="image/*" onchange="readImage(this,'homeHero','homePreview','homeStatus')"><div class="uploadhint">📷 Select from phone/laptop gallery or device. No URL required.</div><div class="preview"><img id="homePreview"><span id="homeStatus" class="small muted">Current image</span></div><input id="homeHero" type="hidden"></div></div><div class="field full"><label>About text</label><textarea id="homeAbout"></textarea></div></div><br><button class="btn primary" onclick="saveHome()">SAVE HOMEPAGE</button></div></section>
-<section id="orderTab" class="adminTab hidden"><div class="panel"><div class="modalhead"><div><div class="kicker">CTA</div><h2>ORDER METHODS</h2></div><button class="btn green" onclick="editOrder()">+ ADD METHOD</button></div><div class="tablewrap"><table class="table"><thead><tr><th>Label</th><th>Type</th><th>URL</th><th>Enabled</th><th>Actions</th></tr></thead><tbody id="adminOrderRows"></tbody></table></div></div></section>
-</main></div>
-
-<div class="modal" id="loginModal"><div class="modalbox login"><div class="modalhead"><h2>FITNESS FOODS ADMIN</h2><button class="x" onclick="closeModal('loginModal')">×</button></div><div class="panel">Demo login<br><b>Email:</b> admin@fitnessfoods.local<br><b>Password:</b> admin123</div><div class="field"><label>Email</label><input id="loginEmail" value="admin@fitnessfoods.local"></div><br><div class="field"><label>Password</label><input id="loginPass" type="password" value="admin123"></div><br><button class="btn primary" onclick="login()">LOGIN</button><p id="loginError"></p></div></div>
-<div class="modal" id="editModal"><div class="modalbox"><div class="modalhead"><h2 id="editTitle">Edit</h2><button class="x" onclick="closeModal('editModal')">×</button></div><div id="editBody"></div></div></div>
+<footer class="wrap"><div><b>🍕 PIZZA ZONE</b><br>Gandhidham, Gujarat</div><div>5/B, Plot No.533<br>+91 63575 77757</div><div>Demo website</div></footer>
 
 <script>
-const baseImg="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80";
-const galleryBase=[
-["Restaurant","https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85"],
-["Food","https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85"],
-["Food","https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1000&q=85"],
-["Drinks","https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1000&q=85"],
-["Food","https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1000&q=85"],
-["Drinks","https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=1000&q=85"],
-["Restaurant","https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&w=1000&q=85"],
-["Experience","https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1000&q=85"]
-].map(x=>({id:crypto.randomUUID(),category:x[0],url:x[1]}));
-const names=[
-["Coffee","Biscoff Hottie"],["Coffee","Copenhagen Latte"],["Coffee","Creamy Oreo Latte"],["Coffee","Hazelnut Mocha"],["Coffee","Salted Caramel"],["Coffee","V60 Pourover"],
-["Classic Brews","Americano"],["Classic Brews","Cafe Latte"],["Classic Brews","Cafe Mocha"],["Classic Brews","Cappuccino"],["Classic Brews","Espresso"],["Classic Brews","Tea"],
-["Matcha","Berry Matcha"],["Matcha","Citrusy Matcha"],["Matcha","Iced Matcha"],["Matcha","Lavender Matcha"],["Matcha","Matcha Hottie"],["Matcha","Peach Please"],
-["Refreshers","Back To Bali"],["Refreshers","Basil & Peach"],["Refreshers","Coke & Lime"],["Refreshers","Lavender Lovin"],["Refreshers","Lemon Iced Tea"],["Refreshers","Mint Mojito"],
-["Energy Blends","Breakfast Smoothie"],["Energy Blends","Chilled Berry"],["Energy Blends","Fresh Fruit Juice"],["Energy Blends","Glow Up"],["Energy Blends","Sunrise"],["Energy Blends","The Post Workout"],["Energy Blends","Tropical Passion"],
-["Comfort Food","Classic Chilli Cheese Toast"],["Comfort Food","Classic Margherita"],["Comfort Food","Falafel Sandwich"],["Comfort Food","Grilled Paneer Salad"],["Comfort Food","Holy Hummus"],["Comfort Food","Mexican Burger"],["Comfort Food","Sol De Nachos"],["Comfort Food","Sourdough Bruschetta"],["Comfort Food","Spicy Cucumber Salad"],["Comfort Food","Tex-Mex Sandwich"],["Comfort Food","The Avo Fresca"],
-["Asian Comfort","Fire Garlic"],["Asian Comfort","Gochujang Maggi"],["Asian Comfort","Gochujang Veggies"],["Asian Comfort","Ramen Hug"],["Asian Comfort","Spring Wontons"],
-["Bowls","Burrito Bowl"],["Bowls","Mood=soupy"],["Bowls","Paneer With Garlic Rice"],["Bowls","Wee Anytime Bowl"],
-["Pasta","Alfredo"],["Pasta","Creamy Chilli Oil Spaghetti"],["Pasta","Parma Rossa"],["Pasta","Pesto Cremosa"],["Pasta","Ravioli"],["Pasta","Rigatoni Piccanti"],["Pasta","Tratufo Aglio E Olio"],
-["Desserts","Biscoff French Toast"],["Desserts","Chilled Tiramisu"]
+const items=[
+["Classic Pizza","Margherita Pizza","https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=900&q=85"],
+["Classic Pizza","Classic Veg Pizza","https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=85"],
+["Premium Pizza","Seven Cheese Pizza","https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=900&q=85"],
+["Premium Pizza","Party Lover Pizza","https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=85"],
+["Supreme Pizza","Golden Feast Pizza","https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=900&q=85"],
+["Breads","Garlic Bread With Cheese","https://images.unsplash.com/photo-1573140247632-f8fd74997d5c?auto=format&fit=crop&w=900&q=85"],
+["Starters","Manchurian Dry","https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=85"],
+["Salad","Assorted Mixed Salad","https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=85"],
+["Dessert","Brownies & Cakes","https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85"]
 ];
-let menu=JSON.parse(localStorage.getItem("ff_menu")||"null")||names.map(([category,name])=>({id:crypto.randomUUID(),category,name,description:"Description can be updated by the restaurant.",price:"",available:true,featured:false,image:baseImg}));
-let gallery=JSON.parse(localStorage.getItem("ff_gallery")||"null")||galleryBase;
-let home=JSON.parse(localStorage.getItem("ff_home")||"null")||{headline:"GOOD FOOD. GOOD FEELING.",text:"Fresh food, refreshing drinks and a warm dining experience in the heart of Gandhidham.",hero:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=85",about:"Fitness Foods is a place for enjoyable food, refreshing beverages, healthy choices and a comfortable dining atmosphere in Gandhidham."};
-let orders=JSON.parse(localStorage.getItem("ff_orders")||"null")||[
-{id:crypto.randomUUID(),label:"CALL TO ORDER",type:"phone",url:"tel:08803556789",enabled:true},
-{id:crypto.randomUUID(),label:"WHATSAPP ORDER",type:"whatsapp",url:"https://wa.me/918803556789?text=Hello%20Fitness%20Foods%2C%20I%20would%20like%20to%20order.",enabled:true}
-];
-function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
-function scrollToId(id){document.getElementById(id)?.scrollIntoView({behavior:"smooth"})}
-function save(){localStorage.setItem("ff_menu",JSON.stringify(menu));localStorage.setItem("ff_gallery",JSON.stringify(gallery));localStorage.setItem("ff_home",JSON.stringify(home));localStorage.setItem("ff_orders",JSON.stringify(orders));renderPublic();renderAdmin()}
-function renderPublic(){document.getElementById("heroHeadline").innerHTML=esc(home.headline).replace(/\n/g,"<br>");document.getElementById("heroText").textContent=home.text;document.getElementById("aboutText").textContent=home.about;document.getElementById("heroImg").style.backgroundImage=`linear-gradient(#0000,#0008),url('${home.hero}')`;let cats=["ALL",...new Set(menu.map(x=>x.category))];document.getElementById("filters").innerHTML=cats.map(c=>`<button class="filter ${c==="ALL"?"active":""}" onclick="filterMenu('${esc(c)}',this)">${esc(c)}</button>`).join("");showMenu("ALL");document.getElementById("galleryGrid").innerHTML=gallery.map(g=>`<div style="background-image:url('${esc(g.url)}')" title="${esc(g.category)}"></div>`).join("");document.getElementById("orderButtons").innerHTML=orders.filter(x=>x.enabled).map(x=>`<a class="btn ${x.type==="phone"?"primary":"green"}" href="${esc(x.url)}" target="${x.url.startsWith("tel:")?"_self":"_blank"}">${esc(x.label)}</a>`).join("")}
-function showMenu(cat){let arr=cat==="ALL"?menu:menu.filter(x=>x.category===cat);document.getElementById("menuCards").innerHTML=arr.map(x=>`<article class="card"><div class="pic" style="background-image:url('${esc(x.image)}')"></div><div class="body"><span class="tag">${esc(x.category)}</span><h3>${esc(x.name)}</h3><p class="muted">${esc(x.description)}</p><b>${x.price?`₹${esc(x.price)}`:"Price — Add in Admin"}</b></div></article>`).join("")}
-function filterMenu(cat,el){document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));el.classList.add("active");showMenu(cat)}
-function openAdmin(){document.getElementById("loginModal").classList.add("show")}function closeModal(id){document.getElementById(id).classList.remove("show")}
-function login(){if(document.getElementById("loginEmail").value==="admin@fitnessfoods.local"&&document.getElementById("loginPass").value==="admin123"){closeModal("loginModal");document.getElementById("public").classList.add("hidden");document.getElementById("admin").classList.add("show");renderAdmin()}else document.getElementById("loginError").textContent="Demo credentials are admin@fitnessfoods.local / admin123"}
-function logout(){document.getElementById("admin").classList.remove("show");document.getElementById("public").classList.remove("hidden");window.scrollTo(0,0)}
-function showPublic(){logout()}
-function adminTab(id,index){document.querySelectorAll(".adminTab").forEach(x=>x.classList.add("hidden"));document.getElementById(id).classList.remove("hidden");document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));document.querySelectorAll(".tab")[index].classList.add("active")}
-function renderAdmin(){document.getElementById("statItems").textContent=menu.length;document.getElementById("statPhotos").textContent=gallery.length;document.getElementById("statFeatured").textContent=menu.filter(x=>x.featured).length;document.getElementById("statCats").textContent=new Set(menu.map(x=>x.category)).size;document.getElementById("adminMenuRows").innerHTML=menu.map((x,i)=>`<tr><td><img src="${esc(x.image)}" style="width:70px;height:50px;object-fit:cover;border-radius:7px"></td><td>${esc(x.name)}</td><td>${esc(x.category)}</td><td>${x.price?"₹"+esc(x.price):"—"}</td><td>${x.available?"Yes":"No"}</td><td>${x.featured?"Yes":"No"}</td><td><button class="btn small" onclick="editItem(${i})">EDIT</button> <button class="btn danger small" onclick="deleteItem(${i})">DELETE</button></td></tr>`).join("");document.getElementById("adminGalleryRows").innerHTML=gallery.map((x,i)=>`<tr><td><img src="${esc(x.url)}" style="width:70px;height:50px;object-fit:cover;border-radius:7px"></td><td>${esc(x.category)}</td><td><button class="btn small" onclick="editGallery(${i})">EDIT</button> <button class="btn danger small" onclick="deleteGallery(${i})">DELETE</button></td></tr>`).join("");document.getElementById("adminOrderRows").innerHTML=orders.map((x,i)=>`<tr><td>${esc(x.label)}</td><td>${esc(x.type)}</td><td>${esc(x.url)}</td><td>${x.enabled?"Yes":"No"}</td><td><button class="btn small" onclick="editOrder(${i})">EDIT</button> <button class="btn danger small" onclick="deleteOrder(${i})">DELETE</button></td></tr>`).join("");document.getElementById("homeHeadline").value=home.headline;document.getElementById("homeText").value=home.text;document.getElementById("homeHero").value=home.hero;document.getElementById("homePreview").src=home.hero;document.getElementById("homePreview").style.display="block";document.getElementById("homeAbout").value=home.about}
-function readImage(input,targetId,previewId,statusId){let f=input.files&&input.files[0];if(!f)return;if(!f.type.startsWith("image/")){alert("Please select an image file.");input.value="";return}if(f.size>5*1024*1024){alert("Image must be under 5 MB.");input.value="";return}let r=new FileReader();r.onload=e=>{document.getElementById(targetId).value=e.target.result;let p=document.getElementById(previewId);p.src=e.target.result;p.style.display="block";document.getElementById(statusId).textContent="New device photo selected ✓"};r.readAsDataURL(f)}
-function editItem(i){let x=i==null?{id:"",category:"Coffee",name:"",description:"",price:"",available:true,featured:false,image:""}:menu[i];document.getElementById("editTitle").textContent=i==null?"ADD MENU ITEM":"EDIT MENU ITEM";document.getElementById("editBody").innerHTML=`<div class="formgrid"><div class="field"><label>Name</label><input id="eName" value="${esc(x.name)}"></div><div class="field"><label>Category</label><input id="eCat" value="${esc(x.category)}"></div><div class="field"><label>Price</label><input id="ePrice" value="${esc(x.price)}"></div><div class="field"><label>Available</label><select id="eAvail"><option value="true" ${x.available?"selected":""}>Yes</option><option value="false" ${!x.available?"selected":""}>No</option></select></div><div class="field full"><label>Description</label><textarea id="eDesc">${esc(x.description)}</textarea></div><div class="field"><label>Featured</label><select id="eFeat"><option value="true" ${x.featured?"selected":""}>Yes</option><option value="false" ${!x.featured?"selected":""}>No</option></select></div><div class="field full"><label>Food Photo — Device Upload</label><div class="upload"><input id="eFile" type="file" accept="image/*" onchange="readImage(this,'eImage','ePreview','eStatus')"><div class="uploadhint">📷 <b>Choose File</b> → phone/laptop gallery se direct photo select karo. URL ki zarurat nahi.</div><div class="preview"><img id="ePreview" src="${esc(x.image)}" style="display:${x.image?'block':'none'}"><span id="eStatus" class="small muted">${x.image?"Current image":"No image selected"}</span></div><input id="eImage" type="hidden" value="${esc(x.image)}"></div></div></div><br><button class="btn primary" onclick="saveItem(${i==null?"null":i})">SAVE ITEM</button>`;document.getElementById("editModal").classList.add("show")}
-function saveItem(i){let x={id:i==null?crypto.randomUUID():menu[i].id,name:document.getElementById("eName").value,category:document.getElementById("eCat").value,price:document.getElementById("ePrice").value,description:document.getElementById("eDesc").value,available:document.getElementById("eAvail").value==="true",featured:document.getElementById("eFeat").value==="true",image:document.getElementById("eImage").value};if(i===null)menu.push(x);else menu[i]=x;closeModal("editModal");save()}
-function deleteItem(i){if(confirm("Delete this menu item?")){menu.splice(i,1);save()}}
-function editGallery(i){let x=i==null?{id:"",category:"Food",url:""}:gallery[i];document.getElementById("editTitle").textContent=i==null?"ADD GALLERY PHOTO":"EDIT GALLERY PHOTO";document.getElementById("editBody").innerHTML=`<div class="formgrid"><div class="field"><label>Category</label><select id="gCat"><option>Food</option><option>Drinks</option><option>Restaurant</option><option>Interior</option><option>Experience</option></select></div><div class="field full"><label>Gallery Photo — Device Upload</label><div class="upload"><input id="gFile" type="file" accept="image/*" onchange="readImage(this,'gImage','gPreview','gStatus')"><div class="uploadhint">📷 <b>Choose File</b> → device/gallery se direct photo select karo.</div><div class="preview"><img id="gPreview" src="${esc(x.url)}" style="display:${x.url?'block':'none'}"><span id="gStatus" class="small muted">${x.url?"Current image":"No image selected"}</span></div><input id="gImage" type="hidden" value="${esc(x.url)}"></div></div></div><br><button class="btn primary" onclick="saveGallery(${i==null?"null":i})">SAVE PHOTO</button>`;document.getElementById("editModal").classList.add("show");document.getElementById("gCat").value=x.category}
-function saveGallery(i){let x={id:i==null?crypto.randomUUID():gallery[i].id,category:document.getElementById("gCat").value,url:document.getElementById("gImage").value};if(i===null)gallery.push(x);else gallery[i]=x;closeModal("editModal");save()}
-function deleteGallery(i){if(confirm("Delete this photo?")){gallery.splice(i,1);save()}}
-function saveHome(){home={headline:document.getElementById("homeHeadline").value,text:document.getElementById("homeText").value,hero:document.getElementById("homeHero").value,about:document.getElementById("homeAbout").value};save();alert("Homepage saved.")}
-function editOrder(i){let x=i==null?{id:"",label:"ORDER ONLINE",type:"url",url:"",enabled:true}:orders[i];document.getElementById("editTitle").textContent=i==null?"ADD ORDER METHOD":"EDIT ORDER METHOD";document.getElementById("editBody").innerHTML=`<div class="formgrid"><div class="field"><label>Button label</label><input id="oLabel" value="${esc(x.label)}"></div><div class="field"><label>Type</label><select id="oType"><option value="url">URL</option><option value="phone">Phone</option><option value="whatsapp">WhatsApp</option></select></div><div class="field full"><label>Link</label><input id="oUrl" value="${esc(x.url)}"></div><div class="field"><label>Enabled</label><select id="oEnabled"><option value="true" ${x.enabled?"selected":""}>Yes</option><option value="false" ${!x.enabled?"selected":""}>No</option></select></div></div><br><button class="btn primary" onclick="saveOrder(${i==null?"null":i})">SAVE METHOD</button>`;document.getElementById("editModal").classList.add("show");document.getElementById("oType").value=x.type}
-function saveOrder(i){let x={id:i==null?crypto.randomUUID():orders[i].id,label:document.getElementById("oLabel").value,type:document.getElementById("oType").value,url:document.getElementById("oUrl").value,enabled:document.getElementById("oEnabled").value==="true"};if(i===null)orders.push(x);else orders[i]=x;closeModal("editModal");save()}
-function deleteOrder(i){if(confirm("Delete this order method?")){orders.splice(i,1);save()}}
-renderPublic();
+const filters=["ALL",...new Set(items.map(x=>x[0]))];
+document.getElementById("filters").innerHTML=filters.map((x,i)=>`<button class="filter ${i===0?'active':''}" onclick="show('${x}',this)">${x}</button>`).join("");
+function show(cat,el){document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));el.classList.add("active");let a=cat==="ALL"?items:items.filter(x=>x[0]===cat);document.getElementById("menuGrid").innerHTML=a.map(x=>`<article class="item"><div class="itemimg" style="background-image:url('${x[2]}')"></div><div class="itembody"><small class="muted">${x[0]}</small><h3>${x[1]}</h3><p class="muted">Menu item shown in this demo.</p></div></article>`).join("")}
+show("ALL",document.querySelector(".filter"));
 </script>
 </body>
 </html>
